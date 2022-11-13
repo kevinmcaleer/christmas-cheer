@@ -21,7 +21,7 @@ UPDATES = 10
 BRIGHTNESS = 1.0
 
 # WS2812 / NeoPixel™ LEDs
-led_strip = plasma.WS2812(NUM_LEDS, 0, 0, plasma_stick.DAT, color_order=plasma.COLOR_ORDER_RGB)
+led_strip = plasma.WS2812(NUM_LEDS, 0, 0, plasma_stick.DAT, color_order=plasma.COLOR_ORDER_GRB)
 
 # Start updating the LED strip
 led_strip.start()
@@ -54,7 +54,7 @@ col = rgb2hsv(r,g,b)
 hue = col['hue']
 while True:
     
-    for i in range(4, 500, 2):
+    for i in range(4, 500, 10):
         hue += 0.01
         if hue == 1: hue = 0
         UPDATES = i

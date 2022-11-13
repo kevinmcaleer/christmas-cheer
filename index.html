@@ -1,0 +1,21 @@
+{{render_template("header.html")}}
+<div class="container mt-3">
+    <div class="h-100 p-5 bg-light border rounded-3">
+        <h2 class="">The worlds most Over-engineered Christmas Tree Bauble</h2>
+        <p class="">This website is hosted on a <b>Raspberry Pi Pico W</b></p>
+        <p>Catch the YouTube video about this <a href="https://youtu.be/dOEjfBplueM">project by clicking here.</a></p>
+        <a class="btn btn-outline-secondary" href="/mqtt">MQTT</a>
+        <a class="btn btn-outline-secondary" href="/color">Colour Picker</a>
+
+        <a class="btn btn-outline-secondary" href="/spin">Spin</a>
+        <a class="btn btn-outline-secondary" href="/cheerlights">Cheerlights</a>
+
+
+    </div>
+    <div class="h-100 p-5 bg-light border rounded-3">
+        <code>
+            <p>STATUS: {{status}}</p>
+            <p>Current Colour: {{colour}}</p>
+        </code>
+    </div>
+{{render_template("footer.html")}}

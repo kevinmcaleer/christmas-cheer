@@ -5,7 +5,8 @@ def rgb2hsv(r:int, g:int, b:int):
     s = 0
     v = 0
     # constrain the values to the range 0 to 1
-    r_normal, g_normal, b_normal,  = r / 255, g / 255, b / 255
+#     print(f'r: {r}, g: {g}, b: {b}, hue: {h}, saturation: {s}, brightness: {v}')
+    r_normal, g_normal, b_normal,  = int(r) / 255, int(g) / 255, int(b) / 255
     cmax = max(r_normal, g_normal, b_normal)
     cmin = min(r_normal, g_normal, b_normal)
     delta = cmax - cmin
@@ -29,7 +30,10 @@ def rgb2hsv(r:int, g:int, b:int):
     # Value calculation
     v = cmax
     
+    h = h / 360
+    
     colour = {'hue':h,'sat':s,'val':v}
+#     print(f'converted colour is: {colour}')
     
     return colour     
 
@@ -71,3 +75,13 @@ def fade(rgb1, rgb2, amount:float):
     g = int((rgb1['green'] * (1 - amount) + rgb2['green'] * amount))
     b = int((rgb1['blue'] * (1 - amount) + rgb2['blue'] * amount))
     return {'red':r, 'green': g, 'blue':b}
+
+def hex_to_rgb(hex):
+    # converts a hex colour code into RGB
+    h = hex.lstrip('#')
+    r, g, b = (int(h[i:i + 2], 16) for i in (0, 2, 4))
+    return r, g, b
+
+def rgb_to_hex(rgb):
+    # converts an RGB colour into a hex code
+    return '#%02x%02x%02x' % rgb
