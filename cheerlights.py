@@ -14,7 +14,7 @@ Find out more about the Cheerlights API at https://cheerlights.com/
 '''
 
 URL = 'http://api.thingspeak.com/channels/1417/field/2/last.json'
-UPDATE_INTERVAL = 5  # refresh interval in secs. Be nice to free APIs!
+UPDATE_INTERVAL = 1  # refresh interval in secs. Be nice to free APIs!
 
 # Set how many LEDs you have
 NUM_LEDS = 7

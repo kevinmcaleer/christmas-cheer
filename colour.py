@@ -6,7 +6,7 @@ from rgb import *
 NUM_LEDS = 7
 
 
-hex = '#0000FF'
+hex = '#00ffff'
 
 # set up the WS2812 / NeoPixel™ LEDs
 led_strip = plasma.WS2812(NUM_LEDS, 0, 0, plasma_stick.DAT, color_order=plasma.COLOR_ORDER_GRB)
